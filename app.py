@@ -33,7 +33,7 @@ def extract_text():
         session['current_question_index'] = 0
         
         # Generate questions and answers from extracted text
-        prompt = f"""generate 5 question and there answers in json format from the given context delimited by triple backtick ```{text}```"""
+        prompt = f"""generate 2 question and there answers in json format from the given context delimited by triple backtick ```{text}```"""
         response = model.generate_content(prompt)
         response_json = json.loads(response.text.split("```")[1][4:])
         print(response_json)
@@ -44,19 +44,34 @@ def extract_text():
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
+    wrongAns = []
     if 'current_question_index' not in session or 'questions_answers' not in session:
         return redirect(url_for('index'))
 
     questions_answers = session['questions_answers']
 
+    def generate_summary(wrongAns):
+        response = model.generate_content(f"provided list of answers user got wrong delimided by tripple backtik generate a summary for the user about  ```{wrongAns}``` only generate a summary in normal words don't use any special characters or numbers. and also use provide proper feed back on the topics that user needs to study again")
+        return response.text
+    
+    def check_answer(question, answer, correct_answer):
+        response = model.generate_content(f"given the system question, system answer and the user answer provided by the user if the user answer is similar to system answer return true else return false give only one word output system question={question}, system answer={correct_answer}, user answer={answer} ")
+        print(response.text)
+        if response.text == "true" or response.text == "True" or response.text == "TRUE":
+            return False
+        return True
+
     if request.method == 'POST':
         answered = request.form.get('answer')
+        question = questions_answers[session['current_question_index']]['question']
         correct_answer = questions_answers[session['current_question_index']]['answer']
 
         if not answered:
             error = "Please provide an answer."
-        elif answered.lower() != correct_answer.lower():
+        elif check_answer(question, answered, correct_answer):
+            
             error = "Wrong answer. The correct answer is: {}".format(correct_answer)
+            wrongAns.append(questions_answers[session['current_question_index']]['answer'])
         else:
             session['current_question_index'] += 1
 
@@ -64,7 +79,7 @@ def quiz():
                 return redirect(url_for('quiz'))
             else:
                 session.clear()
-                return render_template('quiz_completed.html')
+                return render_template('quiz_completed.html', summ=generate_summary(wrongAns))
         
         return render_template('quiz.html', question=questions_answers[session['current_question_index']]['question'], empty_error=error if not answered else None, wrong_answer_error=error if answered else None)
 
@@ -76,3 +91,4 @@ def quiz():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
