@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <h2>Quiz</h2>
+    <form action="/quiz" method="post">
+        <p>{{ question.question }}</p>
+        <input type="text" id="answer" name="answer">
+        <input type="submit" value="Next">
+        {% if empty_error %}
+        <p style="color: red;">{{ empty_error }}</p>
+        {% endif %}
+        {% if wrong_answer_error %}
+        <p style="color: red;">{{ wrong_answer_error }}</p>
+        {% endif %}
+    </form>
+</body>
+
+</html>
