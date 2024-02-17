@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #1F1F1F;
+    font-family: Regular;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    font-style: normal;
+    /* Use a valid font weight value */
+}
+
+.header-image {
+    height: 150px;
+    width: 100%;
+}
+
+.containerp {
+    padding-top: 160px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.text-container {
+    color: white;
+    width: 400px;
+    height: 224px;
+}
+
+.upload-button {
+    background: linear-gradient(86.91deg, #B62EA6 0%, #4B3684 102.34%);
+    margin-top: 20px;
+    color: #D2D2D2;
+    padding: 0.5rem 2.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 32px;
+    margin-left: 0.5rem;
+    margin-left: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.upload-button:hover {
+    background-color: #444;
+}
+
+input[type="file"] {
+    color: #D2D2D2;
+}
+
+.box {
+    width: 500px;
+    height: 150px;
+    border: 2px dashed white;
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    padding: 160px 0 80px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.htu {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.htu-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    color: #D2D2D2;
+}
+
+.container2 {
+    color: white;
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bolttxt {
+    margin-left: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    font-style: normal;
+}
+
+.upload-btn-container {
+    display: flex;
+    justify-content: center;
+}

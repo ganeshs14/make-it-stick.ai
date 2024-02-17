@@ -4,15 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload PDF</title>
+    <link rel="stylesheet" href="style.css">
+    <title>MakeItStick.ai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
-    <h1>Upload PDF</h1>
-    <form action="/extract_text" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".pdf">
-        <input type="submit" value="Upload PDF">
-    </form>
+    <img src="assets/header.png" alt="Header Image" class="header-image">
+
+
+    <section>
+        <div class="containerp">
+            <div class="text-container">
+                <h2>MakeItStick.ai</h2>
+                <p>Access to thousands of design
+                    resources and templates bla bla
+                    bla catch phrase here</p>
+            </div>
+            <div class="extra-container upload-section">
+                <form action="/extract_text" method="post" enctype="multipart/form-data">
+                    <div class="box">
+                        <input type="file" name="file" accept=".pdf">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+                            style="fill: #D2D2D2;">
+                            <path
+                                d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                        </svg>
+                    </div>
+                    <br>
+                    <div class="upload-btn-container">
+                        <input type="submit" value="Upload PDF" class="upload-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="middle">
+        <h2 class="htu">How to use MakeItStick.ai</h2>
+        <div class="container">
+            <div class="htu-image">
+                <img src="assets/pdf.png" alt="upload pdf" width="300px">
+                <p>1. Upload your Study Material</p>
+            </div>
+            <div class="htu-image">
+                <img src="assets/ans.png" alt="upload pdf" width="300px">
+                <p>2. Answer The Generated Ques</p>
+            </div>
+            <div class="htu-image">
+                <img src="assets/feed.png" alt="upload pdf" width="300px">
+                <p>3. Get Proper Feedback</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container2">
+            <div class="smtxt">
+                <p>Project by,</p>
+            </div>
+            <div class="bolttxt">TeamStackUnderflow</div>
+        </div>
+    </section>
+    <hr width="90%">
+    <p class="htu">Non Copyrighted © 2024 Design and upload by TeamStackUnderflow</p>
 </body>
 
 </html>
