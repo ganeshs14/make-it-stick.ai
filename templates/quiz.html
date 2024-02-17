@@ -4,22 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Questions</title>
 </head>
 
 <body>
-    <h1>Quiz</h1>
-    <form action="/quiz" method="post">
-        <p>{{ question }}</p> <!-- Changed this line -->
-        <input type="text" name="answer">
-        <input type="submit" value="Submit">
-        {% if empty_error %}
-        <p style="color: red;">{{ empty_error }}</p>
-        {% endif %}
-        {% if wrong_answer_error %}
-        <p style="color: red;">{{ wrong_answer_error }}</p>
-        {% endif %}
-    </form>
+    <section>
+        <h1 class="question">Question</h1>
+        <br>
+        <form action="/quiz" method="post">
+            <p class="txt">{{ question }}</p>
+            <input type="text" name="answer" placeholder="Enter your answer here.">
+            <div id="submit-btn">
+                <input type="submit" value="Next">
+            </div>
+
+            <div class="answer">
+                Answer:
+            </div>
+            {% if empty_error %}
+            <div class="check-text">
+                <p style="color: red;">{{ empty_error }}</p>
+            </div>
+            {% endif %}
+            {% if wrong_answer_error %}
+            <div class="ans-container">
+                <p style="color: red;">{{ wrong_answer_error }}</p>
+            </div>
+            {% endif %}
+        </form>
+    </section>
 </body>
 
 </html>
