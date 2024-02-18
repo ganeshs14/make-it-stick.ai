@@ -25,9 +25,10 @@ h2 {
 /* Page quiz.html */
 .question {
     color: white;
-    font-family: Poppins;
-    font-size: 48px;
-    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    font-style: bold;
     line-height: 68px;
     letter-spacing: 0em;
     text-align: left;
@@ -44,9 +45,10 @@ h2 {
     position: relative;
     top: 30px;
     left: 187px;
-    font-family: Poppins;
-    font-size: 28px;
-    font-weight: 100;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
     line-height: 48px;
     letter-spacing: 0em;
     text-align: left;
@@ -56,7 +58,7 @@ h2 {
 
 input[type="text"] {
     width: 1200px;
-    height: 86px;
+    height: 66px;
     position: relative;
     background-color: #1f1f1f;
     top: 30px;
@@ -89,9 +91,10 @@ input[type="submit"] {
 
 .answer {
     color: #ffffffcc;
-    font-family: Poppins;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     font-size: 24px;
-    font-weight: 100;
+    font-style: normal;
     line-height: 48px;
     letter-spacing: 0em;
     text-align: left;
