@@ -4,12 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Completed</title>
+    <link rel="stylesheet" href="../static/styles/quiz.css">
+    <title>Summary</title>
 </head>
 
 <body>
-    <h1>Quiz Completed!</h1>
-    <p>{{ summ }}</p>
+    <div>
+        <div class="question">
+            Summary
+        </div>
+        <div class="answer">
+            Here are some points you can improve on
+        </div>
+        <div class="summ-container">
+            {{ summ }}
+        </div>
+        <form action="/" method="get">
+            <input type="submit" value="Done"
+                style="position: relative; top: 480px; left: 1200px; width: 160px; background: linear-gradient(86.91deg, #b62ea6 0%, #4b3684 102.34%); color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 20px;">
+        </form>
+    </div>
 </body>
 
 </html>
