@@ -31,7 +31,7 @@ The goal of our project is to develop a web application that leverages active le
 - Educators: Educators can also utilize the application to create quizzes and assessments based on course materials.
 
 **Research Inspiration:**
-Our project was inspired by the research of Duonskey and Andrew C. Butler, which suggests that active learning methods, such as repeated testing, are more efficient than passive learning methods like repeated studying. Institutions such as Stanford, Cambridge, and Harvard have endorsed the use of active learning techniques, further reinforcing the importance of our project's focus on active engagement.
+Our project was inspired by the research of Donloskey and Andrew C. Butler, which suggests that active learning methods, such as repeated testing, are more efficient than passive learning methods like repeated studying. Institutions such as Stanford, Cambridge, and Harvard have endorsed the use of active learning techniques, further reinforcing the importance of our project's focus on active engagement.
 
 Feel free to ask any questions you have regarding the project or the topic of active learning!	
 
