@@ -9,6 +9,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 GOOGLE_API_KEY = 'AIzaSyD2_BY1YIYvhxEw7lMk0XuDzA3pwHV4nYU'
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-pro')
+global wrongAns 
 
 @app.route('/')
 def index():
@@ -44,19 +45,24 @@ def extract_text():
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    wrongAns = []
+    
     if 'current_question_index' not in session or 'questions_answers' not in session:
         return redirect(url_for('index'))
 
     questions_answers = session['questions_answers']
 
     def generate_summary(wrongAns):
-        response = model.generate_content(f"provided list of answers user got wrong delimided by tripple backtik generate a summary for the user about  ```{wrongAns}``` only generate a summary in normal words don't use any special characters or numbers. and also use provide proper feed back on the topics that user needs to study again")
-        return response.text
+        if(wrongAns == ""):
+            return "You got all the answers right. Great job!"
+        else:
+            response = model.generate_content(f"generate a summary in simple english words Instructing about how what user should study based on {wrongAns}")
+            ans = response.text
+            ans  = ans.replace('*', '')
+            return ans
     
     def check_answer(question, answer, correct_answer):
         response = model.generate_content(f"given the system question, system answer and the user answer provided by the user if the user answer is similar to system answer return true else return false give only one word output system question={question}, system answer={correct_answer}, user answer={answer} ")
-        print(response.text)
+        # print(response.text)
         if response.text == "true" or response.text == "True" or response.text == "TRUE":
             return False
         return True
@@ -71,14 +77,15 @@ def quiz():
         elif check_answer(question, answered, correct_answer):
             
             error = "Wrong answer. The correct answer is: {}".format(correct_answer)
-            wrongAns.append(questions_answers[session['current_question_index']]['answer'])
         else:
+            questions_answers[session['current_question_index']]['answer'] = "correct"
             session['current_question_index'] += 1
 
             if session['current_question_index'] < len(questions_answers):
                 return redirect(url_for('quiz'))
             else:
                 session.clear()
+                wrongAns = json.dumps(questions_answers)
                 return render_template('quiz_completed.html', summ=generate_summary(wrongAns))
         
         return render_template('quiz.html', question=questions_answers[session['current_question_index']]['question'], empty_error=error if not answered else None, wrong_answer_error=error if answered else None)
