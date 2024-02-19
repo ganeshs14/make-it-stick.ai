@@ -1,11 +1,12 @@
-# "Make It Stick: Empowering Learning, Making it Stiff!"
+# "Make It Stick: The Scientific way of sucessfull learning!"
 
-Welcome to the Make It Stick repository 🚀! We've innovated to enhance learning and critical thinking. Dive in to see how we've used Gemini Pro, Flask, Python, and AWS for an enriching experience.
+Welcome to the Make It Stick repository 🚀! We've innovated to enhance learning and critical thinking. Dive in to see how we've used Gemini Pro, Flask, Python for an enriching experience.
 
-# Live Demo 🌐
-Explore our Figma templates for a sneak peek into the Website: [Link to Figma](https://www.figma.com/file/YM7QKyyc7yuhguUSozx98E/50-Web-Sign-up%2Flog-in-designs-(Community)?type=design&node-id=104-3010&mode=design&t=bySTINqAFECzSEPc-0)
 
 Screenshots 📸
+<img width="708" alt="Screenshot 2024-02-19 at 3 33 55 PM" src="https://github.com/ganeshs14/make-it-stick.ai/assets/75218064/dd1fe61d-bc0c-4618-b130-505dd5f197d9">
+<img width="1395" alt="Screenshot 2024-02-18 at 12 58 07 PM" src="https://github.com/ganeshs14/make-it-stick.ai/assets/75218064/58f59e71-f071-4e34-8baf-e17d61a57653">
+<img width="805" alt="Screenshot 2024-02-18 at 12 30 34 PM" src="https://github.com/ganeshs14/make-it-stick.ai/assets/75218064/b34b3cfb-f8b3-4c13-a7bd-a724b52ec069">
 
 
 # Overview 📝
